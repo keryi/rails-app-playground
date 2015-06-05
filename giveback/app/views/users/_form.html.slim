@@ -1,0 +1,11 @@
+=form_for @user, url: '/signup' do |f|
+  =f.label :email
+  =f.email_field :email, placeholder: 'email'
+  
+  =f.label :password
+  =f.password_field :password, placeholder: 'password'
+  
+  =f.label :password_confirmation
+  =f.password_field :password_confirmation, placeholder: 'password confirmation'
+    
+  =f.submit 'Sign up'

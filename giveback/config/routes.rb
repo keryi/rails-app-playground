@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'welcome#index'
+  devise_scope :user do
+    get '/signup' => 'users#new', as: :new_signup_path
+    post '/signup' => 'users#create', as: :signup_path
+    root 'users#new'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
